@@ -1,6 +1,6 @@
 'use strict';
 
-Apps.Main.addModule('main', function(context) {
+Apps.Header.addModule('header', function(context) {
   return {
 		behaviors: ['event'],
 		init : function () {}
