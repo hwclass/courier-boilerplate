@@ -1,0 +1,62 @@
+{
+  "name": "courier-boilerplate",
+  "version": "1.0.0",
+  "description": "A boilerplate project structure with T3 framework.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hwclass/courier-boilerplate.git"
+  },
+  "keywords": [
+    "courier",
+    "boilerplate",
+    "t3"
+  ],
+  "author": "hwclass",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hwclass/courier-boilerplate/issues"
+  },
+  "homepage": "https://github.com/hwclass/courier-boilerplate",
+  "dependencies": {
+    "better-console": "^0.2.4",
+    "browser-sync": "^2.7.13",
+    "del": "^1.2.0",
+    "extend": "^3.0.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-chmod": "^1.2.0",
+    "gulp-clone": "^1.0.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-concat-css": "^2.2.0",
+    "gulp-copy": "0.0.2",
+    "gulp-flatten": "^0.1.0",
+    "gulp-header": "^1.2.2",
+    "gulp-help": "^1.6.0",
+    "gulp-if": "^1.2.5",
+    "gulp-less": "^3.0.3",
+    "gulp-minify-css": "^1.2.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-print": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.3",
+    "gulp-rtlcss": "^0.1.4",
+    "gulp-sass": "^2.0.3",
+    "gulp-uglify": "^1.2.0",
+    "gulp-util": "^3.0.6",
+    "gulp-watch": "^4.2.4",
+    "jQuery": "^1.7.4",
+    "map-stream": "0.0.6",
+    "require-dot-file": "^0.4.0",
+    "t3js": "^1.4.1",
+    "yamljs": "^0.2.3",
+    "express": "^4.10.6",
+    "body-parser": "~1.4.2",
+    "method-override": "~2.0.2",
+    "path": "^0.4.9"
+  }
+}
