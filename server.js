@@ -1,34 +1,60 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var methodOverride = require('method-override');
-var app = express();
-var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
-var config = require('./client/src/config')[env];
+'use strict';
 
-app.set('views', config.rootPath + '/client/src/apps');
+var Hapi = require('hapi');
+var Path = require('path');
+var Logging = require('good');
+var Handlebars = require('handlebars');
+var HandlebarsLayouts = require('handlebars-layouts');
 
-/*app.use(bodyParser.json());*/ 
+var config = require(Path.join(__dirname, 'config/all'));
+var routes = require(Path.join(__dirname, 'routes/all'));
 
-/*
-app.use(bodyParser.json({
-  type: 'application/vnd.api+json'
-}));
-*/
+var server = new Hapi.Server({
+	app : {
+		views : config.views
+	}
+});
 
-app.use(bodyParser.urlencoded({
-  extended: true
-}));
+//Connection alias for the Hapi server instance
+server.connection({
+	host : config.host,
+	port : config.port,
+	app : config
+});
 
-app.use(methodOverride('X-HTTP-Method-Override')); // override with the X-HTTP-Method-Override header in the request. simulate DELETE/PUT
+//Initialize routes for the endpoints
+server.route(routes);
 
+//Set the variables for view instances
+server.views({
+  engines: {
+    html: require('handlebars')
+  },
+  path: Path.join(__dirname, server.settings.app.views.path),
+  layoutPath: Path.join(__dirname, server.settings.app.views.layoutPath),
+  layout: server.settings.app.views.layoutFile,
+  helpersPath : Path.join(__dirname, server.settings.app.views.helpersPath),
+  partialsPath: Path.join(__dirname, server.settings.app.views.partialsPath)
+});
 
-app.use(express.static(__dirname + '/client')); // set the static files location /public/img will be /img for users
-app.use('/libs', express.static(__dirname + 'node_modules'));
-
-// routes ==================================================
-require('./client/src/routes')(app); // pass our application into our routes
-
-// start app ===============================================
-app.listen(config.port);
-
-console.log('Server running on port : ' + config.port + ' ...');
+//Register some logging
+server.register({
+  register: Logging,
+  options: {
+    reporters: [{
+      reporter: require('good-console'),
+      events: {
+        response: '*',
+        log: '*'
+      }
+    }]
+  }
+}, function (err) {
+  if (err) {
+    throw server.settings.app.messages.error.DEFAULT + '' + err;
+	}
+	//Begin starting the server instance
+	server.start(function () {
+	  server.log('info', 'Server running at: ' + server.info.uri);
+  });
+});

@@ -23,9 +23,13 @@
   "homepage": "https://github.com/hwclass/courier-boilerplate",
   "dependencies": {
     "better-console": "^0.2.4",
+    "body-parser": "~1.4.2",
     "browser-sync": "^2.7.13",
     "del": "^1.2.0",
+    "express": "^4.10.6",
     "extend": "^3.0.0",
+    "good": "^6.3.0",
+    "good-console": "^5.0.2",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^2.3.1",
     "gulp-chmod": "^1.2.0",
@@ -49,14 +53,15 @@
     "gulp-uglify": "^1.2.0",
     "gulp-util": "^3.0.6",
     "gulp-watch": "^4.2.4",
+    "handlebars": "^3.0.3",
+    "handlebars-layouts": "^3.1.0",
+    "hapi": "^8.8.0",
     "jQuery": "^1.7.4",
     "map-stream": "0.0.6",
+    "method-override": "~2.0.2",
+    "path": "^0.4.9",
     "require-dot-file": "^0.4.0",
     "t3js": "^1.4.1",
-    "yamljs": "^0.2.3",
-    "express": "^4.10.6",
-    "body-parser": "~1.4.2",
-    "method-override": "~2.0.2",
-    "path": "^0.4.9"
+    "yamljs": "^0.2.3"
   }
 }
