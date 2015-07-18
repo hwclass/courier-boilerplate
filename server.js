@@ -1,13 +1,18 @@
 'use strict';
 
+//Import the dependencies to struct the server-side
 var Hapi = require('hapi');
 var Path = require('path');
 var Logging = require('good');
 var Handlebars = require('handlebars');
 
+//Import all config constants
 var config = require(Path.join(__dirname, 'config/all'));
+
+//Import all the routes for API endpoints
 var routes = require(Path.join(__dirname, 'routes/all'));
 
+//Put the current view declerations into server instance
 var server = new Hapi.Server({
 	app : {
 		views : config.views
