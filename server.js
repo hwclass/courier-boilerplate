@@ -41,6 +41,15 @@ server.views({
   partialsPath: Path.join(__dirname, server.settings.app.views.partialsPath)
 });
 
+server.route({
+  method: 'GET',
+  path: '/cdn/{fileName}',
+  handler: function (request, reply) {
+  	console.log(request.params.fileName);
+    reply.file('./cdn/' + request.params.fileName);
+  }
+});
+
 //Register some logging
 server.register({
   register: Logging,
