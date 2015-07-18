@@ -1,7 +1,8 @@
 {
   "name": "courier-boilerplate",
-  "version": "1.0.0",
-  "description": "A boilerplate project structure with T3 framework.",
+  "version": "0.0.1",
+  "description": "A boilerplate project structure with Hapi and T3 framework.",
+  "author": "hwclass",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,9 +14,10 @@
   "keywords": [
     "courier",
     "boilerplate",
-    "t3"
+    "hapi",
+    "t3",
+    "handlebars"
   ],
-  "author": "hwclass",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/hwclass/courier-boilerplate/issues"

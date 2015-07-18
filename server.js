@@ -4,7 +4,6 @@ var Hapi = require('hapi');
 var Path = require('path');
 var Logging = require('good');
 var Handlebars = require('handlebars');
-var HandlebarsLayouts = require('handlebars-layouts');
 
 var config = require(Path.join(__dirname, 'config/all'));
 var routes = require(Path.join(__dirname, 'routes/all'));
