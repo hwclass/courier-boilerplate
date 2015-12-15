@@ -58,12 +58,15 @@
     "handlebars": "^3.0.3",
     "handlebars-layouts": "^3.1.0",
     "hapi": "^8.8.0",
-    "jQuery": "^1.7.4",
+    "jquery": "^1.7.4",
     "map-stream": "0.0.6",
     "method-override": "~2.0.2",
     "path": "^0.4.9",
     "require-dot-file": "^0.4.0",
     "t3js": "^1.4.1",
     "yamljs": "^0.2.3"
+  },
+  "devDependencies": {
+    "superstatic": "^3.0.0"
   }
 }

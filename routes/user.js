@@ -9,5 +9,11 @@ module.exports = {
       user : request.params.userId
     };
     return reply.view('user', data);
+  },
+  config : {
+  	state: {
+        parse: false, // parse and store in request.state
+		failAction: 'ignore' // may also be 'ignore' or 'log'
+	}
   }
 };

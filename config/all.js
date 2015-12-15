@@ -5,6 +5,7 @@ var Path = require('path');
 var db = require(Path.join(__dirname, 'db'));
 var views = require(Path.join(__dirname, 'views'));
 var messages = require(Path.join(__dirname, 'messages'));
+var extras = require(Path.join(__dirname, 'extras'));
 
 module.exports = {
 	host : 'localhost',

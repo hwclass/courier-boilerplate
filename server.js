@@ -9,6 +9,8 @@ var Handlebars = require('handlebars');
 //Import all config constants
 var config = require(Path.join(__dirname, 'config/all'));
 
+console.dir(config);
+
 //Import all the routes for API endpoints
 var routes = require(Path.join(__dirname, 'routes/all'));
 
