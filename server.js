@@ -49,6 +49,12 @@ server.route({
   handler: function (request, reply) {
   	console.log(request.params.fileName);
     reply.file('./cdn/' + request.params.fileName);
+  },
+  config : {
+    state: {
+      parse: false, // parse and store in request.state
+      failAction: 'ignore' // may also be 'ignore' or 'log'
+    }
   }
 });
 
