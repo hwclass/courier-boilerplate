@@ -1,4 +1,4 @@
-app.main.addBehavior('event', function (context) {
+app.index.addBehavior('event', function (context) {
 
 	'use strict';
 

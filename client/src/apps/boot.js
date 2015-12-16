@@ -2,15 +2,13 @@
 
 app.header.startAll();
 
-app.header.init({
-	debug : true
-});
+app.header.init({debug : true});
 
 //starting main app
-app.main.startAll();
+app.index.startAll();
 
 //invoking the init of the main module
-app.main.init({
+app.index.init({
 	debug : true,
 	someGlobal : 'Hallelujah!'
 });

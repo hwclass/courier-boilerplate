@@ -1,4 +1,4 @@
-app.main.addService('random', function (context) {
+app.index.addService('random', function (context) {
 	'use strict';
 	return {
 		getRandom : function () {

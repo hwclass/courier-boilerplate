@@ -3,9 +3,9 @@
 	'use strict';
 
 	//creating the object wrapper for Main application
-	app.main = app.main || {};
+	app.index = app.index || {};
 
 	//referencing the T3 app
-	app.main = Box.Application;
+	app.index = Box.Application;
 
 })();
