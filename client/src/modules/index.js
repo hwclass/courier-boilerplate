@@ -1,8 +1,9 @@
-'use strict';
-
-Apps.addModule('index', function(context) {
+app.addModule('index', function(context) {
+  'use strict';
   return {
-	behaviors: ['event'],
-		init : function () {}
+    behaviors: ['event'],
+		init : function () {
+      console.log('index module initialized.');
+    }
 	}
 });

@@ -1,8 +1,9 @@
-'use strict';
-
-Apps.Main.addModule('main', function(context) {
+app.main.addModule('main', function(context) {
+  'use strict';
   return {
 		behaviors: ['event'],
-		init : function () {}
+		init : function () {
+      console.log('Main module initialized.');
+    }
 	}
 });

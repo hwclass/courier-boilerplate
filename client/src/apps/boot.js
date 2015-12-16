@@ -1,20 +1,20 @@
-'use strict';
-
 (function () {
 
-	//starting main app
-	Apps.Main.startAll();
+	'use strict';
 
-	//invoking the init of the main module
-	Apps.Main.init({
-		debug : true,
-		someGlobal : 'Hallelujah!'
+	app.header.startAll();
+
+	app.header.init({
+		debug : true
 	});
 
-	Apps.Header.startAll();
+	//starting main app
+	app.main.startAll();
 
-	Apps.Header.init({
-		debug : true
+	//invoking the init of the main module
+	app.main.init({
+		debug : true,
+		someGlobal : 'Hallelujah!'
 	});
 
 })();

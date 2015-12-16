@@ -1,13 +1,8 @@
-'use strict';
-
-Apps.Main.addService('random', function (context) {
-
+app.main.addService('random', function (context) {
+	'use strict';
 	return {
-
 		getRandom : function () {
 			return Math.random();
 		}
-
-	} 
-
+	}
 });

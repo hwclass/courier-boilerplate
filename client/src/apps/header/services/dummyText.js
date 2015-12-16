@@ -1,6 +1,6 @@
-'use strict';
+app.header.addService('dummyText', function (context) {
 
-Apps.Header.addService('dummyText', function (context) {
+	'use strict';
 
 	return {
 
@@ -8,6 +8,6 @@ Apps.Header.addService('dummyText', function (context) {
 			return 'This is a dummy text as well..';
 		}
 
-	} 
+	}
 
 });

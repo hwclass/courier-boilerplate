@@ -1,11 +1,11 @@
-'use strict';
-
 (function () {
 
+	'use strict';
+
 	//creating the object wrapper for Main application
-	Apps.Header = Apps.Header || {};
+	app.header = app.header || {};
 
 	//referencing the T3 app
-	Apps.Header = Box.Application;		
+	app.header = Box.Application;
 
 })();

@@ -1,11 +1,11 @@
-'use strict';
-
 (function () {
 
+	'use strict';
+
 	//creating the object wrapper for Main application
-	Apps.Main = Apps.Main || {};
+	app.main = app.main || {};
 
 	//referencing the T3 app
-	Apps.Main = Box.Application;		
+	app.main = Box.Application;
 
 })();

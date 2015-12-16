@@ -1,13 +1,13 @@
-'use strict';
+app.header.addBehavior('event', function (context) {
 
-Apps.Header.addBehavior('event', function (context) {
+	'use strict';
 
 	var dummyTextService;
 
 	return {
 
 		init : function () {
-			dummyTextService = context.getService('dummyText');	
+			dummyTextService = context.getService('dummyText');
 		},
 
 		onclick : function (element, event, elementType) {
@@ -15,7 +15,7 @@ Apps.Header.addBehavior('event', function (context) {
 			var dummyText = dummyTextService.getDummyText();
 			element.target.innerHTML = dummyText;
 		}
-		
-	} 
+
+	}
 
 });
