@@ -1,27 +1,31 @@
 'use strict';
 
 //Import the dependencies to struct the server-side
-var Hapi = require('hapi');
-var Path = require('path');
-var Logging = require('good');
-var Handlebars = require('handlebars');
+var hapi = require('hapi');
+var path = require('path');
+var logging = require('good');
+var handlebars = require('handlebars');
+
+var clientDir = path.join(__dirname, './client');
 
 //Import all config constants
-var config = require(Path.join(__dirname, 'config/all'));
-
-console.dir(config);
+var config = require(path.join(__dirname, 'config/all'));
 
 //Import all the routes for API endpoints
-var routes = require(Path.join(__dirname, 'routes/all'));
+var routes = require(path.join(__dirname, 'routes/all'));
+
+path.join(__dirname, '../client/src');
+
+console.log(__dirname);
 
 //Put the current view declerations into server instance
-var server = new Hapi.Server({
+var server = new hapi.Server({
 	app : {
 		views : config.views
 	}
 });
 
-//Connection alias for the Hapi server instance
+//Connection alias for the hapi server instance
 server.connection({
 	host : config.host,
 	port : config.port,
@@ -36,19 +40,32 @@ server.views({
   engines: {
     html: require('handlebars')
   },
-  path: Path.join(__dirname, server.settings.app.views.path),
-  layoutPath: Path.join(__dirname, server.settings.app.views.layoutPath),
+  path: path.join(__dirname, server.settings.app.views.path),
+  layoutPath: path.join(__dirname, server.settings.app.views.layoutPath),
   layout: server.settings.app.views.layoutFile,
-  helpersPath : Path.join(__dirname, server.settings.app.views.helpersPath),
-  partialsPath: Path.join(__dirname, server.settings.app.views.partialsPath)
+  helpersPath : path.join(__dirname, server.settings.app.views.helpersPath),
+  partialsPath: path.join(__dirname, server.settings.app.views.partialsPath)
 });
 
 server.route({
   method: 'GET',
   path: '/cdn/{fileName}',
   handler: function (request, reply) {
-  	console.log(request.params.fileName);
     reply.file('./cdn/' + request.params.fileName);
+  },
+  config : {
+    state: {
+      parse: false, // parse and store in request.state
+      failAction: 'ignore' // may also be 'ignore' or 'log'
+    }
+  }
+});
+
+server.route({
+  method: 'GET',
+  path: '/{params*}',
+  handler: {
+      directory: { path: clientDir }
   },
   config : {
     state: {
@@ -60,7 +77,7 @@ server.route({
 
 //Register some logging
 server.register({
-  register: Logging,
+  register: logging,
   options: {
     reporters: [{
       reporter: require('good-console'),
