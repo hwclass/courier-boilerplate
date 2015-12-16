@@ -1,4 +1,4 @@
-app.footer.addBehavior('event', function (context) {
+app.footer.addBehavior('footerEvents', function (context) {
 
 	'use strict';
 

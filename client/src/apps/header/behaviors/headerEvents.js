@@ -1,4 +1,4 @@
-app.header.addBehavior('event', function (context) {
+app.header.addBehavior('headerEvents', function (context) {
 
 	'use strict';
 
