@@ -1,4 +1,4 @@
-app.header.addModule('header', function(context) {
+app.header.addModule('title', function(context) {
 	'use strict';
 	return {
 		behaviors: ['event'],
