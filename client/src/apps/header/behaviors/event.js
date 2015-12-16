@@ -11,7 +11,7 @@ app.header.addBehavior('event', function (context) {
 		},
 
 		onclick : function (element, event, elementType) {
-			event.stopImmediatePropagation();
+			//event.stopImmediatePropagation();
 			var dummyText = dummyTextService.getDummyText();
 			element.target.innerHTML = dummyText;
 		}
