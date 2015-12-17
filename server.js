@@ -16,8 +16,6 @@ var routes = require(path.join(__dirname, 'routes/all'));
 
 path.join(__dirname, '../client/src');
 
-console.log(__dirname);
-
 //Put the current view declerations into server instance
 var server = new hapi.Server({
 	app : {
