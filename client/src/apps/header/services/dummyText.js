@@ -5,7 +5,7 @@ app.header.addService('dummyText', function (context) {
 	return {
 
 		getDummyText : function () {
-			return 'This is a dummy text as well..';
+			return 'This is a dummy text..';
 		}
 
 	}
