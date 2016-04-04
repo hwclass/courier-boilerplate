@@ -6,6 +6,7 @@ App.index.addModule('indexTitle', function(context) {
     init : function () {
       console.log('Index module initialized.');
       moduleEl = context.getElement();
+      console.log(context.getGlobal('someGlobal'));
     },
     destroy : function () {
       moduleEl = null;

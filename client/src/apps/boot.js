@@ -1,13 +1,13 @@
 'use strict';
 
 /*header app*/
-if (initializer.app.ifExists('header')) {
+if (Validator.app.ifExists('header')) {
   App.header.startAll();
   App.header.init({debug : true});
 }
 
 /*index app*/
-if (initializer.app.ifExists('index')) {
+if (Validator.app.ifExists('index')) {
   App.index.startAll();
   App.index.init({
     debug : true,
@@ -16,7 +16,7 @@ if (initializer.app.ifExists('index')) {
 }
 
 /*about app*/
-if (initializer.app.ifExists('about')) {
+if (Validator.app.ifExists('about')) {
   App.about.startAll();
   App.about.init({
     debug : true,
@@ -25,7 +25,7 @@ if (initializer.app.ifExists('about')) {
 }
 
 /*about app*/
-if (initializer.app.ifExists('user')) {
+if (Validator.app.ifExists('user')) {
   App.user.startAll();
   App.user.init({
     debug : true,
@@ -34,7 +34,7 @@ if (initializer.app.ifExists('user')) {
 }
 
 /*footer app*/
-if (initializer.app.ifExists('footer')) {
+if (Validator.app.ifExists('footer')) {
   App.footer.startAll();
   App.footer.init({debug : true});
 }
