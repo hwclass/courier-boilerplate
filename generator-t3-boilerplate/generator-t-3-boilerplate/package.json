@@ -1,0 +1,39 @@
+{
+  "name": "generator-t-3-boilerplate",
+  "version": "0.0.0",
+  "description": "A yeoman generator gfor t3-boilerplate",
+  "homepage": "",
+  "author": {
+    "name": "hwclass",
+    "email": "harderworking.class@gmail.com",
+    "url": "hwclass.in"
+  },
+  "files": [
+    "generators"
+  ],
+  "main": "generators/index.js",
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^0.21.1",
+    "chalk": "^1.0.0",
+    "yosay": "^1.0.2"
+  },
+  "devDependencies": {
+    "yeoman-assert": "^2.0.0",
+    "gulp": "^3.6.0",
+    "gulp-eslint": "^1.0.0",
+    "gulp-exclude-gitignore": "^1.0.0",
+    "gulp-istanbul": "^0.9.0",
+    "gulp-mocha": "^2.0.0",
+    "gulp-plumber": "^1.0.0",
+    "gulp-nsp": "^2.1.0"
+  },
+  "repository": "https://github.com/hwclass/t3-boilerplate.git",
+  "scripts": {
+    "prepublish": "gulp prepublish",
+    "test": "gulp"
+  },
+  "license": "MIT"
+}
