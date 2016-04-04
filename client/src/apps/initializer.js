@@ -3,7 +3,7 @@ var initializer = (function () {
   return {
     app : {
       ifExists : function (appName) {
-        return (!!app[appName]?true:false);
+        return (!!App[appName]?true:false);
       }
     }
   }

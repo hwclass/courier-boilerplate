@@ -1,4 +1,4 @@
-app.footer.addModule('footerTitle', function(context) {
+App.footer.addModule('footerTitle', function(context) {
 	'use strict';
 	var moduleEl;
 	return {
