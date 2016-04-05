@@ -1,16 +1,16 @@
 'use strict';
 
-var Path = require('path');
+const Path = require('path');
 
-var db = require(Path.join(__dirname, 'db'));
-var views = require(Path.join(__dirname, 'views'));
-var messages = require(Path.join(__dirname, 'messages'));
-var extras = require(Path.join(__dirname, 'extras'));
+const db = require(Path.join(__dirname, 'db'));
+const views = require(Path.join(__dirname, 'views'));
+const messages = require(Path.join(__dirname, 'messages'));
+const extras = require(Path.join(__dirname, 'extras'));
 
 module.exports = {
-	host : 'localhost',
-	port : '8080',
-	dbConnection : db.connectionStr,
-	views : views,
-	messages : messages
+  host : 'localhost',
+  port : '3000',
+  dbConnection : db.connectionStr,
+  views : views,
+  messages : messages
 }

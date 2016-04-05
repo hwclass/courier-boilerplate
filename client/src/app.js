@@ -1,3 +1,3 @@
 'use strict';
 
-var app = app || {};
+var App = App || {};

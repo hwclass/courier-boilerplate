@@ -1,40 +1,16 @@
 'use strict';
 
-/*header app*/
-if (initializer.app.ifExists('header')) {
-	app.header.startAll();
-	app.header.init({debug : true});
-}
+var apps = ['index', 'about', 'header', 'footer', 'user'],
+    appIndex = 0;
 
-/*index app*/
-if (initializer.app.ifExists('index')) {
-	app.index.startAll();
-	app.index.init({
-		debug : true,
-		someGlobal : 'Hallelujah!'
-	});
-}
-
-/*about app*/
-if (initializer.app.ifExists('about')) {
-	app.about.startAll();
-	app.about.init({
-		debug : true,
-		someGlobal : 'Hallelujah!'
-	});
-}
-
-/*about app*/
-if (initializer.app.ifExists('user')) {
-	app.user.startAll();
-	app.user.init({
-		debug : true,
-		someGlobal : 'Hallelujah!'
-	});
-}
-
-/*footer app*/
-if (initializer.app.ifExists('footer')) {
-	app.footer.startAll();
-	app.footer.init({debug : true});
+while (true) {
+  if (!!App.hasOwnProperty(apps[appIndex])) {
+    App[apps[appIndex]].startAll();
+    App[apps[appIndex]].init({debug : true});
+  }
+  if (appIndex !== apps.length) {
+    appIndex++;
+  } else {
+    break;
+  }
 }

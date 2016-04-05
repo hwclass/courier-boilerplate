@@ -1,9 +1,7 @@
-'use strict';
-
 module.exports = {
   method: 'GET',
   path: '/user/{userId}',
-  handler: function(request, reply) {
+  handler: (request, reply) => {
     var data = {
       title : 'User View',
       user : request.params.userId
@@ -11,9 +9,9 @@ module.exports = {
     return reply.view('user', data);
   },
   config : {
-  	state: {
-        parse: false, // parse and store in request.state
-		failAction: 'ignore' // may also be 'ignore' or 'log'
-	}
+    state: {
+      parse: false, // parse and store in request.state
+      failAction: 'ignore' // may also be 'ignore' or 'log'
+    }
   }
 };

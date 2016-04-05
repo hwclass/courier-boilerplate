@@ -1,23 +1,23 @@
 'use strict';
 
 //Import the dependencies to struct the server-side
-var hapi = require('hapi');
-var path = require('path');
-var logging = require('good');
-var handlebars = require('handlebars');
+const hapi = require('hapi'),
+      path = require('path'),
+      logging = require('good'),
+      handlebars = require('handlebars');
 
-var clientDir = path.join(__dirname, './client');
+const clientDir = path.join(__dirname, './client');
 
 //Import all config constants
-var config = require(path.join(__dirname, 'config/all'));
+const config = require(path.join(__dirname, 'config/all'));
 
 //Import all the routes for API endpoints
-var routes = require(path.join(__dirname, 'routes/all'));
+const routes = require(path.join(__dirname, 'routes/all'));
 
 path.join(__dirname, '../client/src');
 
 //Put the current view declerations into server instance
-var server = new hapi.Server({
+const server = new hapi.Server({
 	app : {
 		views : config.views
 	}
@@ -48,7 +48,7 @@ server.views({
 server.route({
   method: 'GET',
   path: '/cdn/{fileName}',
-  handler: function (request, reply) {
+  handler: (request, reply) => {
     reply.file('./cdn/' + request.params.fileName);
   },
   config : {
@@ -85,12 +85,12 @@ server.register({
       }
     }]
   }
-}, function (err) {
+}, (err) => {
   if (err) {
     throw server.settings.app.messages.error.DEFAULT + '' + err;
 	}
 	//Begin starting the server instance
-	server.start(function () {
+	server.start(() => {
 	  server.log('info', 'Server running at: ' + server.info.uri);
   });
 });
