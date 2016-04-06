@@ -4,7 +4,11 @@
 const hapi = require('hapi'),
       path = require('path'),
       logging = require('good'),
-      handlebars = require('handlebars');
+      handlebars = require('handlebars'),
+      inert = require('inert'),
+      vision = require('vision'),
+      hapiSwagger = require('hapi-swagger'),
+      pack = require('./package');
 
 const clientDir = path.join(__dirname, './client');
 
