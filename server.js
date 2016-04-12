@@ -4,7 +4,11 @@
 const hapi = require('hapi'),
       path = require('path'),
       logging = require('good'),
-      handlebars = require('handlebars');
+      handlebars = require('handlebars'),
+      inert = require('inert'),
+      vision = require('vision'),
+      hapiSwagger = require('hapi-swagger'),
+      pack = require('./package');
 
 const clientDir = path.join(__dirname, './client');
 
@@ -63,7 +67,7 @@ server.route({
   method: 'GET',
   path: '/{params*}',
   handler: {
-      directory: { path: clientDir }
+    directory: { path: clientDir }
   },
   config : {
     state: {
@@ -71,6 +75,16 @@ server.route({
       failAction: 'ignore' // may also be 'ignore' or 'log'
     }
   }
+});
+
+server.route({
+  method : 'GET',
+  path : '/hotspots',
+  handler : (req, reply) => {
+    reply({
+      hotspots : {'hotspots' : 'hotspot is true'}
+    }).code(200);
+  } 
 });
 
 //Register some logging
